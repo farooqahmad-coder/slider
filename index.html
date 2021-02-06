@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div style='text-align: center;position: relative;'>
+        <button onclick='prev()' style="position: absolute;bottom: 50%;left:138px;">Prev</button>
+        <img id="slider" width='900px' height="500px" src="./Images/2nd-Death-Anniversary-Of-Junaid-Jamshed-and-PK-661-Crash-Victims-2.jpg" alt="" srcset="">
+        <button onclick='next()' style="position: absolute;bottom: 50%;">Next</button>
+    </div>
+
+    <script>
+        var images=[
+            '2nd-Death-Anniversary-Of-Junaid-Jamshed-and-PK-661-Crash-Victims-2.jpg',
+            '5889be6e9c7ed.jpg'
+        ]
+        var num=0;
+        function next(){
+            var slider=document.getElementById('slider');
+            num++;
+            if (num>=images.length) {
+                num=0;
+            }
+            slider.src=images[num];
+        }
+        function prev(){
+            var slider=document.getElementById('slider');
+            num--;
+            if (num<0) {
+                num=images.length-1;
+            }
+            slider.src=images[num];
+        }
+    </script>
+</body>
+</html>
